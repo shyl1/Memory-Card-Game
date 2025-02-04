@@ -4,7 +4,7 @@
 * Matching logic
 	* if the first === second , disable being clicked on again by removing flipped class
 	* if the first !== second , set a timeout to see it before flipping 
-* to make sure I clicked on specific card use data attribute 
+* to make sure I clicked on specific card use image src 
 * make sure that when flipping the user cant flip another 2 cards , means disable the board
 * when clicking on the card twice make sure that does not mess up with the flipping logic , wait until there is a second card is flipped
 * when there is a match update the progress bar
