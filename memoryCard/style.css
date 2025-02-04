@@ -1,0 +1,189 @@
+:root{
+  --color1:#F7CFD8;
+  --bg-btn:#A6F1E0;
+  --hover-btn: #73C7C7;
+  --color2: #F4F8D3;
+  --color3: black;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  height: 100vh;
+  background:var(--color1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1{
+  margin: 2rem;
+  font-size: 45px;
+  font-family:"Henny Penny", serif;
+}
+
+/*contanier that holds progress , cards and buttons*/
+.Container{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*styling the progress Bar*/
+.progressContainer{
+  width: 100%;
+  height: 3em;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  position: absolute;
+  background:linear-gradient(0.25turn , var(--bg-btn) , var(--hover-btn)) ;
+  top: 0;
+  transition: width 0.5s ease;
+}
+
+#myBarLeft {
+  left: 0;
+  width: 0%;
+}
+
+#myBarRight {
+  right: 0;
+  width: 0%;
+}
+
+/* styling the cards*/
+.gameContainer{
+  display: grid;
+  grid-template-rows: repeat(4 , 125px);
+  grid-template-columns: repeat(5 ,125px);
+  gap: 20px;
+  padding: 2rem;
+}
+
+.memoryCard {
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.innerCard {
+  width: 100%;
+  height: 100%;
+  background-color:var(--color2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.front-face , .back-face {
+  backface-visibility: hidden;
+}
+
+.front-face {
+  width: 100px;
+  height: 100px;
+  transform: rotateY(180deg);
+}
+
+.memoryCard.flipped .innerCard{
+  transform: rotateY(180deg);
+}
+
+/*styling the buttons*/
+.buttons{
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem;
+  gap: 50px;
+}
+
+button{
+  width: 9rem;
+  height: 3rem;
+  margin: 5px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  background-color:var(--bg-btn) ;
+  color:var(--color3);
+}
+
+button:hover{
+  background-color: var(--hover-btn) ;
+  color:var(--color2) ;
+}
+
+
+/*mobile responsive*/
+/* < 772*/
+@media (max-width:772px){
+  .gameContainer{
+    display: grid;
+    grid-template-rows: repeat(5 ,1fr );
+    grid-template-columns: repeat(4 ,1fr);
+    gap: 10px;
+    padding: 2rem;
+  }
+
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+  }
+}
+
+
+/* < 500 */
+@media (max-width:500px){
+  h1 {
+    font-size: 25px;
+  }
+
+  .gameContainer{
+    display: grid;
+    grid-template-rows: repeat(5 ,60px );
+    grid-template-columns: repeat(4 ,70px);
+    gap: 10px;
+    padding: 2rem;
+  }
+  
+  .front-face {
+    width: 50px;
+    height: 50px;
+  }
+
+  img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+
+  .buttons{
+    gap: 10px;
+  }
+}
+
