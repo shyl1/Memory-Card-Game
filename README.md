@@ -14,3 +14,4 @@
 
 # language 
   * Pure JavaScript
+  * TypeScript
