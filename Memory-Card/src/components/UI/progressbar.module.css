@@ -1,0 +1,12 @@
+.progressBar {
+  height: 100%;
+  position: absolute;
+  background:linear-gradient(0.25turn , var(--bg-btn) , var(--hover-btn)) ;
+  top: 0;
+  transition: width 0.5s ease;
+}
+
+#myBarLeft {
+  left: 0;
+  width: 0%;
+}
