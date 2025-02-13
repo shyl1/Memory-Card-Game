@@ -1,0 +1,51 @@
+
+/*styling the progress Bar*/
+.progressContainer{
+  width: 100%;
+  height: 3em;
+  overflow: hidden;
+  position: relative;
+}
+
+.gameContainer{
+  display: grid;
+  grid-template-rows: repeat(4 , 125px);
+  grid-template-columns: repeat(5 ,125px);
+  gap: 20px;
+  padding: 2rem;
+}
+
+.buttons{
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+  gap: 50px;
+}
+
+/*mobile responsive*/
+/* < 772*/
+@media (max-width:772px){
+  .gameContainer{
+    display: grid;
+    grid-template-rows: repeat(5 ,1fr );
+    grid-template-columns: repeat(4 ,1fr);
+    gap: 10px;
+    padding: 2rem;
+  }
+}
+
+
+/* < 500 */
+@media (max-width:500px){
+  .gameContainer{
+    display: grid;
+    grid-template-rows: repeat(5 ,60px );
+    grid-template-columns: repeat(4 ,70px);
+    gap: 10px;
+    padding: 2rem;
+  }
+  
+  .buttons{
+    gap: 10px;
+  }
+}
